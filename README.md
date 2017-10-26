@@ -4,19 +4,14 @@ BlockApps STRATO is the fastest way to build, launch, and deploy decentralized a
 
 ## Build your own dApp with STRATO
 
-The STRATO dApp portal is a browser-based web application interacting with the STRATO blockchain via REST API calls.
+The STRATO dApp portal is a browser-based web application interacting with the STRATO blockchain via REST API calls. The dApp portal is a browser web application, which interacts with smart contract on the deployed on [BlockApps STRATO](http://blockapps.net/blockapps-strato-blockchain-application-development/) using various APIs that handle method invocations, contract calls and transaction signing.
 
-Requirements for the STRATO dApp Portal:
+## Requirements for the STRATO dApp Portal:
 
 1. STRATO dApp portal is currently a client-side only app, fully-running in the user's browser;
 2. STRATO dApp portal should not have any pre-deployed contracts on the blockchain before initiating transactions to blockchain from the dApp;
 3. index.html should be the only entry point to the dApp and may include external Javascript and static files;
 4. UI files should not contain the absolute paths to local files (links starting with `/`). All links and paths should be relative to the index.html location;
-
-# STRATO Decentralized Applications Guide
-
-## Introduction
-STRATO decentralized application is a browser web application, which interacts with smart contract on the deployed on [BlockApps STRATO](http://blockapps.net/blockapps-strato-blockchain-application-development/) using various APIs that handle method invocations, contract calls and transaction signing.
 
 ## dApp structure
 
