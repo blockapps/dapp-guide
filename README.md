@@ -6,7 +6,7 @@ BlockApps STRATO is the fastest way to build, launch, and deploy decentralized a
 
 The STRATO dApp portal is a browser-based web application interacting with the STRATO blockchain via REST API calls. The dApp portal is a browser web application, which interacts with smart contract on the deployed on [BlockApps STRATO](http://blockapps.net/blockapps-strato-blockchain-application-development/) using various APIs that handle method invocations, contract calls and transaction signing.
 
-## Requirements for the STRATO dApp Portal:
+## Requirements for the STRATO dApp Portal
 
 1. STRATO dApp portal is currently a client-side only app, fully-running in the user's browser;
 2. STRATO dApp portal should not have any pre-deployed contracts on the blockchain before initiating transactions to blockchain from the dApp;
@@ -20,7 +20,7 @@ The STRATO dApp portal is a browser-based web application interacting with the S
 3. The app should use `index.html` as an entry point to the application, which in turn loads all other static resources (js and css). You can look at [lottery-demo-app](https://github.com/blockapps/lottery-demo-app) or this [example](https://github.com/blockapps/dapp-guide/tree/master/example).
 4. Since the UI maybe shipped to different nodes, `index.html` should use only relatives path instead of absolute paths for local static resources.
 
-## Deploying a STRATO dApp with STRATO Management Dashboard
+## Deploying a dApp with STRATO Management Dashboard (SMD)
 
 ### metadata.json
 Your application should have a text file called `metadata.json` in the root folder. `metadata.json` defines the application (1) name, (2) version, (3) description and (4) maintainer of the dApp.
@@ -76,7 +76,7 @@ Coming soon (next release): a CLI tool to test whether your dApp is packaged pro
 5. Submit the form using the user credentials, the account address from buffer and your Zip package.
 6. In a few seconds, you should be able to see your new app in the list. *This may take up to a minute*. 
 
-## Launch Your dApp
+## Launch Your dApp!
 
 To run the decentralized application in SMD:
 
