@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Get Started Building Decentralized Apps with BlockApps STRATO
 
 BlockApps STRATO is the fastest way to build, launch, and deploy decentralized apps. 
@@ -12,15 +13,32 @@ Requirements for the STRATO dApp Portal:
 2. STRATO dApp portal should not have any pre-deployed contracts on the blockchain before initiating transactions to blockchain from the dApp;
 3. index.html should be the only entry point to the dApp and may include external Javascript and static files;
 4. UI files should not contain the absolute paths to local files (links starting with `/`). All links and paths should be relative to the index.html location;
+=======
+# STRATO Decentralized Applications Guide
 
-TODOs:
-todo: The links to simple storage example (future link: https://github.com/blockapps/dapp-guide/example) and to lottery app (https://github.com/blockapps/lottery-demo-app)
-todo: somewhere mention how to make ReactJS to use relative paths (`"homepage": "."` in package.json)
+## STRATO Decentralized Applications
+TODO: some marketing text here
 
-## Package and deploy the STRATO dApp with SMD
+## Introduction
+STRATO decentralized application is a browser web application, which interacts with smart contract on the deployed on [BlockApps STRATO](http://blockapps.net/blockapps-strato-blockchain-application-development/) using various APIs that handle method invocations, contract calls and transaction signing.
+
+## dApp structure
+
+1. The applications are packaged as a collection of smart contracts and front end code.
+2. The front end interacts directly with the smart contracts using the REST APIs provided by [BlockApps STRATO](http://blockapps.net/blockapps-strato-blockchain-application-development/)
+3. The app should use `index.html` as an entry point to the application, which in turn loads all other static resources (js and css). You can look at [lottery-demo-app](https://github.com/blockapps/lottery-demo-app) or this [example](https://github.com/blockapps/dapp-guide/tree/master/example).
+4. Since the UI maybe shipped to different nodes, `index.html` should use only relatives path instead of absolute paths for local static resources.
+>>>>>>> 43cdc53bd0b4f836dc75f8cf8aff7374f8573238
+
+
+## Deploying a STRATO dApp with STRATO Management Dashboard
 
 ### metadata.json
+<<<<<<< HEAD
 Your application should have a text file called `metadata.json` in the root folder. `metadata.son` defines the application (1) name, (2) version, (3) description and (4) maintainer of the dApp.
+=======
+STRATO  dApps need a `metadata.json` file in the root folder, defining the name of the application, it's version, description and maintainer information.
+>>>>>>> 43cdc53bd0b4f836dc75f8cf8aff7374f8573238
 
 Example:
 ```
@@ -35,10 +53,15 @@ Example:
 
 ### Packaging
 
+<<<<<<< HEAD
 Your dApp should be packaged as a Zip file.
 
 File structure of the Zip archive is strictly defined:
 
+=======
+STRATO dApp should be packaged as a zip archive which contains the smart contracts and the UI, with the following format.
+
+>>>>>>> 43cdc53bd0b4f836dc75f8cf8aff7374f8573238
 ```
 .zip
 ├─ contracts/
@@ -51,9 +74,12 @@ File structure of the Zip archive is strictly defined:
 └─ metadata.json
 ```
 
+<<<<<<< HEAD
 You may name the Zip file whatever you would like. 
 
 Coming soon (next release): a CLI tool to test whether your dApp is packaged properly. 
+=======
+>>>>>>> 43cdc53bd0b4f836dc75f8cf8aff7374f8573238
 
 ### Deployment
 1. Open the STRATO Management Dashboard in your browser by entering the STRATO node URL (enter the login credentials if prompted: `admin/admin` by default)
@@ -73,6 +99,12 @@ Coming soon (next release): a CLI tool to test whether your dApp is packaged pro
 To run the decentralized application in SMD:
 
 1. Go to "Apps" tab
+<<<<<<< HEAD
 2. Navigate to the dApp you wish to deploy and click "launch"
 3. Congratulations! Your dApp is now available on the STRATO dApp portal. 
 
+=======
+2. Click the "Launch" button by the app in the list
+3. ...
+4. PROFIT!
+>>>>>>> 43cdc53bd0b4f836dc75f8cf8aff7374f8573238
