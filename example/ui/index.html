@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <title>jQuery.post demo</title>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+</head>
+<body>
+
+<h1>Simple storage DApp</h1>
+
+<form action='#' id='dapp-form'>
+  <!--STRATO blockchain username-->
+  <input type='text' name='username' placeholder='Username' id='username' required>
+  <br/>
+  <!--STRATO blockchain user address-->
+  <input type='text' name='user-address' placeholder='Account address' id='user-address' required>
+  <br/>
+  <!--STRATO blockchain user password-->
+  <input type='text' name='password' placeholder='Password' id='password' required>
+  <br/>
+  <!--Type of operation: deploy the contract, set contract's value, get contract's value-->
+  <select form='dapp-form' id='submit-type'>
+    <option value='deploy' selected>Deploy</option>
+    <option value='set'>Set value</option>
+    <option value='get'>Get value</option>
+  </select>
+  <!--Contract address to interact with (only visible for Set/Get operations)-->
+  <input type='text' name='contractAddress' placeholder='Contract address' id='contract-address' style='display: none'>
+  <!--Value to set to the contract (only visible for Set operation)-->
+  <input type='number' name='setValue' placeholder='New value' id='set-value' style='display: none'>
+  <br/>
+  <input type='submit' value='Submit'>
+</form>
+
+<!--Wrapper for response messages-->
+<div id='result-wrapper'></div>
+
+<script>
+
+  // Show/hide fields depending on the operation type
+  $('#submit-type').change(function() {
+    var submitType = $(this).val();
+    switch(submitType) {
+      case 'deploy':
+        $('#contract-address, #set-value').hide().prop('required', false);
+        break;
+      case 'set':
+        $('#contract-address, #set-value').show().prop('required', true);
+        break;
+      case 'get':
+        $('#contract-address').show().prop('required', true);
+        $('#set-value').hide().prop('required', false);
+        break;
+    }
+  });
+
+  // On form submit
+  $('#dapp-form').submit(function (event) {
+    // Stop the default form submit flow
+    event.preventDefault();
+
+    var resultWrapper = $('#result-wrapper');
+
+    resultWrapper.text('Processing submit...');
+
+    // Get values from the form:
+    var $form = $(this);
+    var username = $form.find('#username').val();
+    var userAddress = $form.find('#user-address').val();
+    var password = $form.find('#password').val();
+
+    var submitType = $('#submit-type').val();
+    //The urls to bloc API's upload-contract and call-contract-method endpoints
+    var uploadContractUrl = 'http://' + window.location.hostname + '/bloc/v2.2/users/' + username + '/' + userAddress + '/contract?resolve';
+    var callContractMethodUrl = 'http://' + window.location.hostname + '/bloc/v2.2/users/' + username + '/' + userAddress + '/contract/SimpleStorage/' + $('#contract-address').val() + '/call?resolve';
+
+    switch(submitType) {
+
+      case 'deploy':
+        $.get('../contracts/SimpleStorage.sol')
+          .done(function (contractContent) {
+
+            var uploadContractBody = {
+              password: password,
+              contract: 'SimpleStorage',
+              src: contractContent
+            };
+
+            $.post({
+              url: uploadContractUrl,
+              data: JSON.stringify(uploadContractBody),
+              contentType: 'application/json',
+              dataType: 'json'
+            })
+              .done(function (response) {
+                // Fill-in the contract-address field and show it
+                $('#contract-address').val(response['txResult']['contractsCreated']).show();
+                resultWrapper.text('Contract deployed successfully for the user');
+              })
+              .fail(function(error) {
+                resultWrapper.text('Error: wrong user credentials provided or Bloc API is not reachable');
+              })
+          })
+          .fail(function(error) {
+            resultWrapper.text('Error: contract file not found');
+          });
+        break;
+
+      case 'set':
+
+        var value = $form.find('#set-value').val();
+
+        var callSetBody = {
+          "args": {x: value},
+          "method": "set",
+          "password": password
+        };
+
+        $.post({
+          url: callContractMethodUrl,
+          data: JSON.stringify(callSetBody),
+          contentType: 'application/json',
+          dataType: 'json'
+        })
+          .done(function (response) {
+            resultWrapper.text('The value has been set');
+          })
+          .fail(function(error) {
+            resultWrapper.text('Error: wrong user credentials provided or Bloc API is not reachable');
+          });
+        break;
+
+      case 'get':
+        var callSetBody = {
+          "args": {},
+          "method": "get",
+          "password": password
+        };
+
+        $.post({
+          url: callContractMethodUrl,
+          data: JSON.stringify(callSetBody),
+          contentType: 'application/json',
+          dataType: 'json'
+        })
+          .done(function (response) {
+            resultWrapper.text('The value in storage is: ' + response.data.contents[0]);
+          })
+          .fail(function(error) {
+            resultWrapper.text('Error: wrong user credentials provided or Bloc API is not reachable');
+          });
+        break;
+    }
+  });
+</script>
+
+</body>
+</html>
