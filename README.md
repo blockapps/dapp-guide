@@ -10,7 +10,7 @@ The STRATO dApp portal is a browser-based web application interacting with the S
 
 1. STRATO dApp portal is currently a client-side only app, fully-running in the user's browser;
 2. STRATO dApp portal should not have any pre-deployed contracts on the blockchain before initiating transactions to blockchain from the dApp;
-3. index.html should be the only entry point to the dApp and may include external Javascript and static files;
+3. `index.html` should be the only entry point to the dApp and may include external Javascript and static files;
 4. UI files should not contain the absolute paths to local files (links starting with `/`). All links and paths should be relative to the index.html location;
 
 ## dApp structure
@@ -74,7 +74,7 @@ Coming soon (next release): a CLI tool to test whether your dApp is packaged pro
 3. Go to "Apps" tab
 4. Click "Deploy" button
 5. Submit the form using the user credentials, the account address from buffer and your Zip package.
-6. In a few seconds, you should be able to see your new app in the list. *This may take up to a minute* 
+6. In a few seconds, you should be able to see your new app in the list. *This may take up to a minute*. 
 
 ## Launch Your dApp
 
