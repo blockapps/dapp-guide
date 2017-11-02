@@ -31,7 +31,7 @@ Example:
 
 ```
 {
-  "name": "my_dApp",
+  "name": "my dApp",
   "version": "0.0.1",
   "description": "Most useful and helpful decentralized application ever.",
   "maintainer": "Alice, alice@example.com"
@@ -52,11 +52,11 @@ STRATO dApp should be packaged as a zip archive which contains the smart contrac
 ├─ contracts/
 │   └─ ...all solidity contract files (*.sol)
 │
-├─ ui/
-│   ├─ index.html
-│   └─ ...other ui application files used by index.html
+├─ metadata.json
 │
-└─ metadata.json
+├─ index.html
+│
+└─ ...other ui application files/directories used by index.html
 ```
 
 You may name the Zip file whatever you would like. 
