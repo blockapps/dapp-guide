@@ -78,7 +78,7 @@
     switch(submitType) {
 
       case 'deploy':
-        $.get('../contracts/SimpleStorage.sol')
+        $.get('contracts/SimpleStorage.sol')
           .done(function (contractContent) {
 
             var uploadContractBody = {
