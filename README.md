@@ -17,7 +17,7 @@ The STRATO dApp portal is a browser-based web application interacting with the S
 
 1. The applications are packaged as a collection of smart contracts and front end code.
 2. The front end interacts directly with the smart contracts using the REST APIs provided by [BlockApps STRATO](http://blockapps.net/blockapps-strato-blockchain-application-development/)
-3. The app should use `index.html` as an entry point to the application, which in turn loads all other static resources (js and css). You can look at [lottery-demo-app](https://github.com/blockapps/lottery-demo-app) or this [example](https://github.com/blockapps/dapp-guide/tree/master/example).
+3. The app should use `index.html` as an entry point to the application, which in turn loads all other static resources (js and css). You can look at [charity-raffle](https://github.com/blockapps/charity-raffle) or this [example](https://github.com/blockapps/dapp-guide/tree/master/example).
 4. Since the UI maybe shipped to different nodes, `index.html` should use only relative paths instead of absolute paths for local static resources.
 
 ## Deploying a dApp with STRATO Management Dashboard (SMD)
