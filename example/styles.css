@@ -1,0 +1,69 @@
+html, body {
+  height: 100%;
+  text-align: center;
+  background-color: #F5F5F5;
+}
+
+.form-wrapper {
+  background-color: white;
+  padding: 30px 15px;
+  width: 250px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+form input {
+  border: #A1D9ED solid 2px;
+  padding: 3px;
+  margin: 3px 0px;
+  width: 200px;
+}
+
+form input[type="submit"] {
+  width: 210px;
+  padding: 6px 0;
+  margin-top: 20px;
+  margin-right: 5px;
+  background-color: #0060C7;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+form input[type="submit"]:disabled {
+  background-color: #769cc5
+}
+
+form select {
+  width: 210px;
+  padding: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-right: 4px;
+  border: #A1D9ED solid 2px;
+  background-color: white;
+  text-align-last: center;
+}
+
+form, form input, form select {
+  border-radius: 3px;
+}
+
+#error {
+  font-size: 12px;
+  color: red;
+}
+
+#dapp-form {
+  display: none;
+}
+
+.select-types {
+  margin-right: 4px;
+}
+
+#result-wrapper {
+  font-size: 15px;
+  font-weight: 600;
+}
+
