@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   text-align: center;
   background-color: #F5F5F5;
+  margin: 0;
 }
 
 .form-wrapper {
@@ -9,7 +10,7 @@ html, body {
   padding: 30px 15px;
   width: 250px;
   text-align: center;
-  margin: 0 auto;
+  margin: 48px auto;
 }
 
 form input {
@@ -45,7 +46,7 @@ form select {
   text-align-last: center;
 }
 
-form, form input, form select {
+.form-wrapper, form input, form select {
   border-radius: 3px;
 }
 
@@ -67,3 +68,35 @@ form, form input, form select {
   font-weight: 600;
 }
 
+.app-title {
+  margin: 0;
+  padding: 8px 0;
+  background-color: #0079D2;
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+
+.back-icon {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  float: left;
+  margin: 25px 40px;
+  cursor: pointer;
+  height: 4px;
+  width: 4px;
+  display: none;
+}
+
+.back-icon:hover {
+  border: solid #0079D2;
+  border-width: 0 3px 3px 0;
+}
+
+#contract-address, #set-value {
+  display: none;
+}

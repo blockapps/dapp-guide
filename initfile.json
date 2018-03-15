@@ -1,0 +1,7 @@
+{
+  "SimpleStorage": {
+    "contractName": "SimpleStorage",
+    "contractFilename": "contracts/SimpleStorage.sol",
+    "args": {}
+  }
+}

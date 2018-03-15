@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+  <title>Simplest dApp example</title>
+  <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <h1 class="app-title">Simplest dApp example</h1>
+  <i class="back-icon"></i>
+
+  <div class="form-wrapper">
+    <form action='#' id='login-form'>
+      <div id="error"></div>
+      <!--STRATO blockchain username-->
+      <input type='text' name='username' placeholder='Username' id='username' required>
+      <br/>
+      <!--STRATO blockchain user password-->
+      <input type='password' name='password' placeholder='Password' id='password' required>
+      <br/>
+
+      <input class='login-btn' type='submit' value='Submit'>
+    </form>
+
+    <form action='#' id='dapp-form'>
+      <!--STRATO blockchain user address-->
+      <input type='text' name='user-address' value='' id='user-address' required disabled>
+      <br/>
+      <!--Type of operation: deploy the contract, set contract's value, get contract's value-->
+      <select form='dapp-form' id='submit-type'>
+        <option value='deploy' selected>Deploy</option>
+        <option value='set'>Set value</option>
+        <option value='get'>Get value</option>
+      </select>
+
+      <div class="select-types">
+        <!--Contract address to interact with (only visible for Set/Get operations)-->
+        <input type='text' name='contractAddress' placeholder='Contract address' id='contract-address'>
+        <!--Value to set to the contract (only visible for Set operation)-->
+        <input type='number' name='setValue' placeholder='New value' id='set-value'>
+      </div>
+
+      <!--Wrapper for response messages-->
+      <div id='result-wrapper'></div>
+
+      <input class='dapp-submit-btn' type='submit' value='Submit'>
+    </form>
+  </div>
+
+  <script src="index.js"></script>
+  <script src="addresses.js"></script>
+
+</body>
+
+</html>
