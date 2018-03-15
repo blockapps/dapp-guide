@@ -1,0 +1,102 @@
+html, body {
+  height: 100%;
+  text-align: center;
+  background-color: #F5F5F5;
+  margin: 0;
+}
+
+.form-wrapper {
+  background-color: white;
+  padding: 30px 15px;
+  width: 250px;
+  text-align: center;
+  margin: 48px auto;
+}
+
+form input {
+  border: #A1D9ED solid 2px;
+  padding: 3px;
+  margin: 3px 0px;
+  width: 200px;
+}
+
+form input[type="submit"] {
+  width: 210px;
+  padding: 6px 0;
+  margin-top: 20px;
+  margin-right: 5px;
+  background-color: #0060C7;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+
+form input[type="submit"]:disabled {
+  background-color: #769cc5
+}
+
+form select {
+  width: 210px;
+  padding: 3px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  margin-right: 4px;
+  border: #A1D9ED solid 2px;
+  background-color: white;
+  text-align-last: center;
+}
+
+.form-wrapper, form input, form select {
+  border-radius: 3px;
+}
+
+#error {
+  font-size: 12px;
+  color: red;
+}
+
+#dapp-form {
+  display: none;
+}
+
+.select-types {
+  margin-right: 4px;
+}
+
+#result-wrapper {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.app-title {
+  margin: 0;
+  padding: 8px 0;
+  background-color: #0079D2;
+  color: white;
+  font-size: 22px;
+  font-weight: 400;
+  font-family: sans-serif;
+}
+
+.back-icon {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  padding: 3px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  float: left;
+  margin: 25px 40px;
+  cursor: pointer;
+  height: 4px;
+  width: 4px;
+  display: none;
+}
+
+.back-icon:hover {
+  border: solid #0079D2;
+  border-width: 0 3px 3px 0;
+}
+
+#contract-address, #set-value {
+  display: none;
+}
